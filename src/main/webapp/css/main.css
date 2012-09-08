@@ -1,0 +1,20 @@
+#chatbox {
+	height: 100px;
+	width: 350px;
+	overflow: scroll;	
+}
+
+#header {
+	height: 50px;
+	width: 500px;	
+}
+#statusbox {
+	height: 50px;
+	width: 250px;
+	padding-left:10px;
+	overflow: scroll;
+}
+
+.author {
+	font-weight:bold;
+}

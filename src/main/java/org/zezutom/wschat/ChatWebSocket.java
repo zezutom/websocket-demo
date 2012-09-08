@@ -1,0 +1,37 @@
+package org.zezutom.wschat;
+
+import java.io.IOException;
+import java.util.Set;
+
+import org.eclipse.jetty.websocket.WebSocket.OnTextMessage;
+
+public class ChatWebSocket implements OnTextMessage {
+
+	private Connection connection;
+	
+	private Set<ChatWebSocket> users;
+	
+	public ChatWebSocket(Set<ChatWebSocket> users) {
+		this.users = users;
+	}
+	
+	public void onClose(int closeCode, String message) {
+		users.remove(this);		
+	}
+
+	public void onOpen(Connection connection) {
+		this.connection = connection;
+		users.add(this);		
+	}
+
+	public void onMessage(String data) {
+		for (ChatWebSocket user : users) {
+			try {
+				user.connection.sendMessage(data);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}	
+	}
+}
