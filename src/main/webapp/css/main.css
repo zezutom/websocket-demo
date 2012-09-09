@@ -1,20 +1,83 @@
-#chatbox {
-	height: 100px;
-	width: 350px;
-	overflow: scroll;	
+#container {
+	margin: 0 auto;
+	width: 100%;
+	background: #fff;
 }
 
 #header {
-	height: 50px;
-	width: 500px;	
+	background: #ccc;
+	padding: 20px;
 }
-#statusbox {
-	height: 50px;
-	width: 250px;
-	padding-left:10px;
+
+#header h1 {
+	margin: 0;
+}
+
+#menu-container {
+	float: left;
+	width: 100%;
+	background: #333;
+}
+
+#join-as, #prompt, #prompt-search, #welcome {
+	padding-left: 5px;
+}
+
+#join-as, #welcome, #prompt, #prompt-search, #leave {
+	color: #fff;
+	font-weight: bold;
+}
+
+#menu {
+	float: left;
+	display: inline;	
+}
+
+#login {
+	float: right;
+	display: inline;	
+}
+
+#leave {
+	padding: 0 15px 0 15px;	
+}
+
+#content-container {
+	float: left;
+	width: 100%;
+	color: #fff;
+	background: #333;
+}
+
+#content
+{
+	clear: left;
+	float: left;
+	width: 65%;
+	padding: 20px 0 8px 5px;
+	display: inline;	
+}
+
+#aside {
+	float: right;
+	width: 32%;
+	padding: 20px 5px 0 0;
+	display: inline;
+}
+
+#chatbox, #statusbox {
+	height: 40%;
 	overflow: scroll;
 }
 
+.me {
+	color: #fff;	
+}
+
+.them {
+	color: aqua;	
+}
+
 .author {
-	font-weight:bold;
+	font-size: small;
 }

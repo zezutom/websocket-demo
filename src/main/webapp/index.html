@@ -11,23 +11,35 @@
 </script>
 </head>
 <body>
-	<div id="header">
-		<table>
-			<tr>
-				<td>			
-					<div id="welcome">
-						<input id="username" value="anonymous" />
-						<input type="button" id="join" value="Join" />
-						<input type="button" id="leave" value="Leave" />		
-					</div>										
-				</td>
-				<td>
-					<div id="statusbox"></div>			
-				</td>
-			</tr>
-		</table>
-	</div>
-	<div id="chatbox"></div>
-	<input type="text" id="message" size="70" />	
+	<div id="container">
+		<div id="header">
+			<h1>Chat powered by HTML5 WebSockets</h1>
+		</div>
+		<div id="menu-container">
+			<div id="menu">
+				<span id="join-as">Join as</span> <input id="username" value="anonymous" />			
+				<span id="prompt">Enter your message:</span> <input type="text" id="message" size="70" />
+				<span id="prompt-search">Search:</span> <input type="text" id="search" size="40" />
+			</div>
+			<div id="login">
+				<span id="welcome"></span>			
+				<a href="#" id="leave">Leave</a>			
+			</div>
+		</div>
+		<div id="content-container">
+			<div id="content">
+				<fieldset>
+					<legend>Chat Room</legend>
+					<div id="chatbox"></div>
+				</fieldset>						
+			</div>	
+			<div id="aside">
+				<fieldset>
+					<legend>History</legend>
+					<div id="statusbox"></div>
+				</fieldset>							
+			</div>
+		</div>	
+	</div>	
 </body>
 </html>
