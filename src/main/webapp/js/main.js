@@ -1,4 +1,4 @@
-var SERVER_URL = 'ws://83.251.163.61:8080/wschat/wschat';
+var SERVER_URL = 'ws://localhost:8080/wschat/wschat';
 var MESSAGE = '{"from":"[from]","text":"[text]", "chat":[chat]}';
 var NEW_ENTRY = '<div class="entry" style="color:[color]"><span class="author">[time] - [from]:</span> [text]</div>';
 var WELCOME = 'Welcome [username]';
