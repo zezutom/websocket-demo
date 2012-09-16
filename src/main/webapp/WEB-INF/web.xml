@@ -14,6 +14,6 @@
   
   <servlet-mapping>
       <servlet-name>WebSocketChat</servlet-name>
-      <url-pattern>/wschat/*</url-pattern>
+      <url-pattern>/talk/*</url-pattern>
   </servlet-mapping>
 </web-app>
