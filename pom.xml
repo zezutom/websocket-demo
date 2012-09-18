@@ -45,16 +45,52 @@
                     <contextPath>/wschat</contextPath>
                     <descriptor>${basedir}/src/main/webapp/web.xml</descriptor>
                 </webAppConfig>
+                <stopPort>9999</stopPort>
+                <stopKey>wschatStop</stopKey>                
             </configuration>
+            <executions>
+                <execution>
+                    <id>jetty-start</id>
+                    <phase>pre-integration-test</phase>
+                    <goals>
+                        <goal>run-war</goal>
+                    </goals>
+                    <configuration>
+                        <scanIntervalSeconds>0</scanIntervalSeconds>
+                        <daemon>true</daemon>
+                    </configuration>
+                </execution>
+                <execution>
+                    <id>jetty-stop</id>
+                    <phase>post-integration-test</phase>
+                    <goals>
+                        <goal>stop</goal>
+                    </goals>
+                </execution>
+            </executions>
         </plugin>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.3.2</version>
             <configuration>
                 <source>${java.version}</source>
                 <target>${java.version}</target>
             </configuration>
         </plugin>
+	   <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+    	 <artifactId>maven-failsafe-plugin</artifactId>
+    	 <version>2.12.1</version>
+		 <executions>
+           <execution>
+             <goals>
+               <goal>integration-test</goal>
+               <goal>verify</goal>
+             </goals>
+           </execution>
+         </executions>    	 
+	   </plugin>               
     </plugins>
   </build>
 </project>

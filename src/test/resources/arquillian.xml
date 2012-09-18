@@ -1,0 +1,17 @@
+<arquillian xmlns="http://jboss.org/schema/arquillian"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://jboss.org/schema/arquillian
+        http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+	<extension qualifier="graphene">
+		<property name="browser">*safari</property>
+		<property name="seleniumMaximize">true</property>
+		<property name="seleniumSpeed">100</property>		
+	</extension>
+	<container qualifier="jetty" default="true">
+		<configuration>			
+			<property name="seleniumTimeoutDefault">60000</property>
+			<property name="seleniumTimeoutAjax">6000</property>
+		</configuration> 
+	</container>
+</arquillian>
